@@ -1,0 +1,165 @@
+import random
+
+def ask_question(question, options, correct_answer):
+    print(question)
+    for option in options:
+        print(option)
+    answer = input("What is the answer?: ").lower()
+    if answer == correct_answer:
+        print("Correct!!")
+        return 1, correct_answer 
+    else:
+        print("Incorrect")
+        return 0, answer
+
+def quiz(questions):
+    scores = 0
+    correct_answers = []
+    for question, options, correct_answer in questions:
+        score, answer = ask_question(question, options, correct_answer)
+        scores += score
+        if score == 1:
+            correct_answers.append(correct_answer)
+ 
+    print(f"Your score is: {scores}")
+    return scores, correct_answers 
+
+def main():
+    users = {}
+
+    while True:
+        name = input("Enter your name: ")
+        account = input("Create an account: ")
+        us = input("Enter username: ")
+
+        if us in users:
+            print("Username already exists, please choose a different username.")
+            continue
+
+        users[us] = {'name': name, 'account': account}
+        print("Welcome, " + us)
+        print()
+        
+        print('Quiz 1 Easy level')
+        print()
+        questions1 = [
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+        ]
+        random.shuffle(questions1)
+        scores1, correct_answers1 = quiz(questions1[:5])  
+
+        if scores1 >= 3:
+            print("Congratulations You pass the quiz")
+        else:
+            print("You failed, try again when you're ready.")
+            break
+        
+        print()
+        
+        print('Quiz 2 Moderate level')
+        print()
+        questions2 = [
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+        ]
+        random.shuffle(questions2)
+        scores2, correct_answers2 = quiz(questions2[:5])  
+        if scores2 >= 3:
+            print("Congratulations You pass the quiz")
+        else:
+            print("You failed, try again when you're ready.")
+            break
+        
+        print()
+        
+        print('Quiz 3 Difficult level')
+        print()
+        questions3 = [
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+            ("1. x = 1, y = 1, z = y - x", [" A) 0", " B) 1", " C) 2", " D) -0"], 'a'),
+            ("2. While loop statement is __________ because they use a true/false condition to control the number of times it repeats", [" A) condition controlled loop", " B) count controlled loop", " C) while loop", " D) infinite loop"], 'a'),
+            ("3. A python _______ is a name used to identify a variable, function, class, module, or other object", [" A) identifier", " B) print", " C) variable", " D) python"], 'a'),
+            ("4. A ______ is a form of sequence data that is comparable to a list", [" A) list", " B) int", " C) float", " D) tuple"], 'd'),
+            ("5. print is?", [" A) python keyword", " B) colon", " C) str or string", " D) tuples"], 'a'),
+        ]
+        random.shuffle(questions3)
+        scores3, correct_answers3 = quiz(questions3[:5]) 
+        
+        print()
+        if scores3 >= 3:
+            print("Congratulations You pass the quiz")
+        else:
+            print("You failed, try again when you're ready.")
+            break
+        
+        print()
+        
+        total_scores = scores1 + scores2 + scores3
+        print("Congratulations You pass the whole quiz")
+        print("Your score is: ", total_scores)
+        print()
+
+
+        if scores1 >= 3 and scores2 >= 3 and scores3 >= 3:
+            print("Correct answers for Easy level:")
+            for answer in correct_answers1:
+                print(answer.upper())  
+            print()
+
+            print("Correct answers for Moderate level:")
+            for answer in correct_answers2:
+                print(answer.upper())  
+            print("Incorrect answers for Moderate level:")
+            print()
+
+            print("Correct answers for Difficult level:")
+            for answer in correct_answers3:
+                print(answer.upper())  
+            print()
+
+        new_user = input("Would you like to try again? yes or no?: ").lower()
+        if new_user != 'yes':
+            log_out = input("Want to log out? yes or no?: ").lower()
+            if log_out == 'yes':
+                print('Logging out...')
+                print('Logged out successfully.')
+                break
+
+if __name__ == "__main__":
+    main()
